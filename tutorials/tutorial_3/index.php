@@ -8,15 +8,14 @@
 </head>
 <style type="text/css">
  body {
-   display: flex;
-   justify-content:center;
+   margin-left: 500px;
+   margin-top:150px;
  }
 </style>
 <body>
 
     <form action="index.php" method="post">
        Your Date Of Birth: <input type="date" name="date">
-        <br>
         <input type="submit" name="submit">
     </form>
     <?php
@@ -25,7 +24,7 @@ if (isset($_POST['submit'])) {
     $date = $_POST['date'];
 
     $age = date("Y/m/d") - $date;
-
+    echo "<br/>";
     echo "You are $age years old.";
 }
 
