@@ -37,3 +37,10 @@ $table = "CREATE TABLE members(
 //}else {
 //  echo "Try again";
 //}
+
+$new_column = "ALTER TABLE members add column password VARCHAR(20)";
+if($conn->query($new_column)===TRUE){
+  echo "You are okay";
+}else {
+  echo "Try again";
+}

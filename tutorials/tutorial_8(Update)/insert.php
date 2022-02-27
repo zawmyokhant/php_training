@@ -14,7 +14,7 @@ if (isset($_POST['send'])) {
 
     $sql_query = "insert into members (username,email,phone,birth_date) values ('$name','$email','$phone','$birth');";
     if ($conn->query($sql_query) === true) {
-        echo "";
+        header('location:index.php');
     }
 }
 ?>
@@ -59,7 +59,6 @@ if (isset($_POST['send'])) {
     </form>
     </div>
 </div>
-
 </center>
 </body>
 </html>

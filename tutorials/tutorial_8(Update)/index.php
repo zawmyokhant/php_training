@@ -24,6 +24,7 @@ function fetch_data($connection)
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MEMBER INFORMATION</title>
+<link rel="stylesheet" href="fontawesome/css/all.min.css" type="text/css" />
 <style>
      table, td, th {
       border: 1px solid #ddd;
@@ -38,21 +39,23 @@ function fetch_data($connection)
     table {
       border-collapse: collapse;
     }
-    .table-data{
-    margin-left:300px;
+    table {
+    margin-left:250px;
    margin-top:50px;
     }
     th, td {
       padding: 15px;
     }
 h2 {
-  margin-left:250px;
+
+  margin-left:500px;
   color: #786dd1;
 }
 a {
-  color: #e30f0b;
+  color: #fff;
 }
 .member {
+  margin-left:250px;
   color : red;
   text-decoration:none;
   display:block;
@@ -61,18 +64,9 @@ a {
 </style>
 </head>
 <body>
-
-
-<div class="table-data">
-        <div class="list-title">
  <h2>MEMBER INFORMATION</h2>
-
-            </div>
-
     <table border="1">
-
         <tr>
-
             <th>No.</th>
             <th>Full Name</th>
             <th>Email Address</th>
@@ -80,10 +74,7 @@ a {
             <th>Birth Date</th>
             <th>Edit</th>
             <th>Delete</th>
-
-
         </tr>
-
 <?php
 
 if (count($fetchData) > 0) {
@@ -96,8 +87,8 @@ if (count($fetchData) > 0) {
 <td><?php echo $data['email']; ?></td>
 <td><?php echo $data['phone']; ?></td>
 <td><?php echo $data['birth_date']; ?></td>
-<td><a href="edit.php?edit=<?php echo $data['id']; ?>" class="edit_btn" >Edit</a></td>
-<td>				<a href="delete.php?id=<?php echo $data["id"]; ?>">Delete</a>
+<td><a href="edit.php?edit=<?php echo $data['id']; ?>"><i class="fa-solid fa-pen-to-square"></i></a></td>
+<td>				<a href="delete.php?id=<?php echo $data["id"]; ?>"><i class="fa-solid fa-trash-can"></i></a>
 </td>
 </tr> <?php
 
@@ -112,13 +103,10 @@ if (count($fetchData) > 0) {
       </tr>
 
 <?php
-
 }
 ?>
-
     </table>
     <a href="insert.php" class="member">ADD MORE MEMBERS</a>
-    </div>
 
 </body>
 </html>
